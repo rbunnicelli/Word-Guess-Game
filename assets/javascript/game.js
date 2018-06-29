@@ -1,13 +1,14 @@
+var guessesLeft = document.getElementById("guesses-left");
+var userGuess = document.getElementById("guessed-letters");
+
 var characters = ["tommy", "chuckie", "phil", "lil", "angelica", "reptar", "arnold", "gerald", "helga", "harold", "grandpa", "phoebe", "eugene", "stinky", "spongebob", "patrick", "squidward", "mr krabs", "plankton", "sandy", "gary", "mermaid man", "barnacle boy", "otto", "reggie", "twister", "squid", "tito", "raymundo"];
+var wins = 0;
+var wonGame = true;
 var guessesLeft = 5;
 var randWord = '';
 var underScores = [];
 var userGuess = [];
 var wrongLetter = [];
-var wins = 0;
-
-var guessesLeft = document.getElementById("guesses-left");
-var userGuess = document.getElementById("guessed-letters");
 
 //new game
 function startGame() {
@@ -32,7 +33,8 @@ document.getElementById('guesses-left').textContent = guessesLeft;
 
 }
 //-----------------------------------------------------------------------------------------------------
-//if letter guessed matches, it fills in underscore. If it does not you lose a life
+
+//if letter guessed matches, it fills in underscore. If it does not, it gets added to the "already guessed" box and you lose a life
 document.onkeyup = function(event) {
     var userGuess = event.key;
 
@@ -46,15 +48,21 @@ document.onkeyup = function(event) {
         wrongLetter.push(userGuess);
         guessesLeft--;
     }
+    //if guessesLeft get to 0, alert the player that they lost
+    if(guessesLeft === 0){
+        alert("You lose!");
+        guessesLeft = 5;
+        wrongLetter = [];
+        underScores = [];
+        startGame();
+    }
+
     document.getElementById('underscores').textContent = underScores.join(" ");
     document.getElementById('guesses-left').textContent = guessesLeft;
     document.getElementById('guessed-letters').textContent = wrongLetter.join(" ");
 }
 
-
 startGame();
-
-
 
 
 
