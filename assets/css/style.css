@@ -1,0 +1,19 @@
+body {
+    background-image: url("../images/nickelodeon.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container {
+    border: 1px solid black;
+    width: 0 auto;
+}
+
+.col-md-8 {
+    border: 1px solid black;
+    width: 0 auto;
+}
+
+.col-md-12 {
+    border: 1px solid black;
+    width: 0 auto;
+}
