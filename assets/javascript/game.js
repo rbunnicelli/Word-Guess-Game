@@ -1,7 +1,11 @@
 var guessesLeft = document.getElementById("guesses-left");
 var userGuess = document.getElementById("guessed-letters");
 
-var characters = ["tommy", "chuckie", "phil", "lil", "angelica", "reptar", "arnold", "gerald", "helga", "harold", "grandpa", "phoebe", "eugene", "stinky", "spongebob", "patrick", "squidward", "mr krabs", "plankton", "sandy", "gary", "mermaid man", "barnacle boy", "otto", "reggie", "twister", "squid", "tito", "raymundo"];
+var characters = [
+    "tommy", "chuckie", "phil", "lil", "angelica", "reptar", 
+    "arnold", "gerald", "helga", "harold", "grandpa", "phoebe", "eugene", "stinky", 
+    "spongebob", "patrick", "squidward", "mr krabs", "plankton", "sandy", "gary",
+    "otto", "reggie", "twister", "squid", "tito", "raymundo"];
 var wins = 0;
 var guessesLeft = 5;
 var randWord = '';
@@ -56,20 +60,20 @@ document.onkeyup = function(event) {
         startGame();
     }
     //if player wins, add 1 to win column, pick new, word and reset game
-    /*if(randWord === userGuess){
+    if(underScores.indexOf("_") === -1) {
         wins++;
         guessesLeft = 5;
         wrongLetter = [];
         underScores = [];
+        document.getElementById('wins').textContent = wins;
         startGame();
-    }*/
+    }
 
     document.getElementById('underscores').textContent = underScores.join(" ");
     document.getElementById('guesses-left').textContent = guessesLeft;
     document.getElementById('guessed-letters').textContent = wrongLetter.join(" ");
     document.getElementById('wins').textContent = wins;
 }
-
 startGame();
 
 
