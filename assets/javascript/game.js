@@ -1,38 +1,55 @@
-var characters = ["Tommy", "Chuckie", "Arnold", "Gerald", "Spongebob", "Patrick", "Otto", "Reggie"];
+var characters = ["Tommy", "Chuckie", "Phil", "Lil", "Angelica", "Reptar", "Arnold", "Gerald", "Helga", "Harold", "Grandpa", "Phoebe", "Eugene", "Stinky", "Spongebob", "Patrick", "Squidward", "Mr Krabs", "Plankton", "Sandy", "Gary", "Mermaid Man", "Barnacle Boy", "Otto", "Reggie", "Twister", "Squid", "Tito", "Raymundo"];
 var guessesLeft = 5;
-var pickedWord = '';
-var pickedWordPlaceholder = [];
-var guessedLetterBank = [];
-var wrongLetterBank = [];
+var randWord = '';
+var underScores = [];
+var userGuess = [];
+var wrongLetter = [];
 
 var placholder = document.getElementById('placeholders');
 var guessesLeft = document.getElementById('guesses-left');
 var guessedLetters = document.getElementById('guessed-letters');
 
 //new game
-function newGame() {
-    guessesLeft = 5;
-    guessedLetterBank: [];
-    wrongLetterBank: [];
-    pickedWordPlaceholder: [];
+function startGame() {
 
-//picked word
-let pickedWord = characters[Math.floor(Math.random() = characters.length)];
+//picks random word from characters array
+randWord = characters[Math.floor(Math.random() * characters.length)];
+//Creates underscore for every letter of the random word chosen
+for(var i = 0; i < randWord.length; i++) {
+    underScores.push('_');
+}
+//Connects with HTML element, underscores and prints the text of character name chosen. Join keeps "," from seperating letters
+document.getElementById('underscores').textContent = underScores.join(" ");
 
-//placeholders of new word
-for (var i = 0; i < characters.length; i++) {
-    if (pickedWord[i] === ' ') {
-        pickedWordPlaceholder.push(' ');
-    } else {
-        pickedWordPlaceholder.push('_');
-    }
-    }
-    guessesLeft.textContent = guessesleft;
-    placeholder.textContent = pickedWordPlaceholder.join('');
-    guessedLetters.textContent = wrongLetterBank;
+//resets wrongLetter to an empty array and guessesLeft to 5
+wrongLetter = [];
+guessesLeft = 5;
 
+// Connects with HTML element, guesses-left and prints the amount of guessesLeft from javascript var
+document.getElementById('guesses-left').textContent = guessesLeft;
 }
 
-//start game onKeyUp
+document.onkeyup = function(event) {
+    userGuess = event.key;
+//Checks to see if letter the user presses is in the randWord selected
+    if(randWord.indexOf(userGuess) > -1)
+    { //if letter in random word matches the user guess then fill underscore with that letter
+       for(var i = 0; i < randWord.length; i++) {
+        if(randWord[i] == userGuess) {
+            underScores[i] = userGuess;
+        }
+    } //if the letter is not an exact match then guesses left subtracts by 1
+ }  else {
+        wrongLetter.push(userGuess);
+        guessesLeft--;
+    }
+}
+
+
+
+startGame();
+
+
+
 
 
