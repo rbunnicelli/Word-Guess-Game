@@ -12,28 +12,37 @@
 <body>
     <div class ="container">
         <div class ="row">
-            <div class = "col-md-8">
+            <div class = "col-md-6">
             <h1>TV Show:</h1>
-            <div id="picture"></div>
+            <div id="picture">
+                <img src="assets/images/90s.png" class="img nick">
             </div>
-            <div class = "col-md-4">
-            <h1>Guesses Remaining:</h1>
+
+            </div>
+            <div class = "col-md-6">
+            <h2>Guesses Remaining:</h2>
             <br>
-            <span id="guesses-left">0</span>
+            <span id="guesses-left">_</span>
             </div>
         </div>
         <div class ="row">
-            <div class = "col-md-12">
-            <h2>Character:</h2>
+            <div class = "col-md-6">
+                <h2>Character:</h2>
             <br>
             <spad id="underscores">_ _ _ _</spad>
+            </div>
+            <div class = "col-md-6">
+                <h2>Wins:</h2>
+            <br>
+            <span id="wins">0</span>
             </div>
         </div>
         <div class = "row">
             <div class = "col-md-12">
                 <h2>Letters Already Guessed:</h2>
                 <br>
-                <span id="guessed-letters">_ _ _ _</span>
+                <span id="guessed-letters"> </span>
+                <br>
             </div>
         </div>
     </div>
