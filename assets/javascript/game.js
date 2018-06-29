@@ -31,7 +31,7 @@ document.getElementById('guesses-left').textContent = guessesLeft;
 
 }
 //-----------------------------------------------------------------------------------------------------
-
+//if letter guessed matches, it fills in underscore. If it does not you lose a life
 document.onkeyup = function(event) {
     var userGuess = event.key;
 
@@ -47,6 +47,7 @@ document.onkeyup = function(event) {
     }
     document.getElementById('underscores').textContent = underScores.join(" ");
     document.getElementById('guesses-left').textContent = guessesLeft;
+    document.getElementById('guessed-letters').textContent = wrongLetter;
 }
 
 startGame();
