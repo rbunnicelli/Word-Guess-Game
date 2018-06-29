@@ -6,7 +6,7 @@ body {
 .container {
     border: 1px solid black;
     width: 0 auto;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 .col-md-6 {
@@ -19,30 +19,42 @@ body {
     width: 0 auto;
 }
 
-img {
-   margin: 0 auto;
+.pic {
+   width: 100%;
 }
 
 #guesses-left {
     font-size: 50px;
-    
+    font-family: 'Eater', cursive;
 }
 
 #underscores {
-    font-size: 40px;
-    
+    font-size: 25px;
+    font-family: 'Eater', cursive;
 }
 
 #guessed-letters {
-    font-size: 40px;
-    margin: 0 auto;
-    
+    font-size: 25px;
+    font-family: 'Eater', cursive;
 }
 
 #wins {
-    font-size: 40px;
-    
+    font-size: 25px;
+    font-family: 'Eater', cursive;
 }
-#picture {
-    margin: 0 auto;
+
+h1 {
+    font-family: 'Eater', cursive;
+    font-size: 27px;
+}
+
+h2 {
+    font-family: 'Eater', cursive;
+    font-size: 27px;
+}
+
+p {
+    font-family: 'Eater', cursive;
+    font-size: 20px;
+    text-align: center;
 }
