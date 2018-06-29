@@ -4,6 +4,7 @@ var randWord = '';
 var underScores = [];
 var userGuess = [];
 var wrongLetter = [];
+var wins = 0;
 
 var guessesLeft = document.getElementById("guesses-left");
 var userGuess = document.getElementById("guessed-letters");
@@ -47,8 +48,9 @@ document.onkeyup = function(event) {
     }
     document.getElementById('underscores').textContent = underScores.join(" ");
     document.getElementById('guesses-left').textContent = guessesLeft;
-    document.getElementById('guessed-letters').textContent = wrongLetter;
+    document.getElementById('guessed-letters').textContent = wrongLetter.join(" ");
 }
+
 
 startGame();
 
