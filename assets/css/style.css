@@ -25,31 +25,31 @@ body {
 
 #guesses-left {
     font-size: 50px;
-    font-family: 'Eater', cursive;
+    font-family: 'Wendy One', sans-serif;
 }
 
 #underscores {
     font-size: 25px;
-    font-family: 'Eater', cursive;
+    font-family: 'Wendy One', sans-serif;
 }
 
 #guessed-letters {
     font-size: 25px;
-    font-family: 'Eater', cursive;
+    font-family: 'Wendy One', sans-serif;
 }
 
 #wins {
     font-size: 25px;
-    font-family: 'Eater', cursive;
+    font-family: 'Wendy One', sans-serif;
 }
 
 h1 {
-    font-family: 'Eater', cursive;
+    font-family: 'Wendy One', sans-serif;
     font-size: 27px;
 }
 
 h2 {
-    font-family: 'Eater', cursive;
+    font-family: 'Wendy One', sans-serif;
     font-size: 27px;
 }
 
@@ -57,4 +57,5 @@ p {
     font-family: 'Eater', cursive;
     font-size: 20px;
     text-align: center;
+    font-weight: bold;
 }
