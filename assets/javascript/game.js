@@ -40,21 +40,24 @@ document.getElementById('guesses-left').textContent = guessesLeft;
 //if letter guessed matches, it fills in underscore. If it does not, it gets added to the "already guessed" box and you lose a life
 document.onkeyup = function(event) {
     var userGuess = event.key;
-
+console.log(userGuess);
     if(randWord.indexOf(userGuess) > -1) {
         for(var i = 0; i < randWord.length; i++) {
             if(randWord[i] == userGuess) {
                 underScores[i] = userGuess;
             }
         }
-    } else {
+    } else if(wrongLetter.indexOf(userGuess) === -1) {
+        
         wrongLetter.push(userGuess);
         guessesLeft--;
+        console.log(wrongLetter);
     }
     //if guessesLeft get to 0, alert the player that they lost, pick new word and reset game
     if(guessesLeft === 0){
         alert("You lose!");
         guessesLeft = 5;
+        wins = 0;
         wrongLetter = [];
         underScores = [];
         startGame();
@@ -66,6 +69,7 @@ document.onkeyup = function(event) {
         wrongLetter = [];
         underScores = [];
         document.getElementById('wins').textContent = wins;
+        alert("You win!");
         startGame();
     }
 
